@@ -1,0 +1,15 @@
+# Detached HEAD (rebase, cherry-pick, bisect) — имени ветки нет, проверять нечего
+branch=$(git symbolic-ref --short -q HEAD) || exit 0
+
+if [ "$branch" = "main" ]; then
+  # На main разрешён только коммит слияния (после разрешения конфликтов)
+  [ -f "$(git rev-parse --git-path MERGE_HEAD)" ] && exit 0
+  echo "Прямые коммиты в main запрещены: создайте ветку <type>/<kebab-описание>." >&2
+  exit 1
+fi
+
+pattern='^(feat|fix|refactor|perf|style|test|docs|build|ci|chore|revert)/[a-z0-9]+(-[a-z0-9]+)*$'
+if ! printf '%s' "$branch" | grep -Eq "$pattern"; then
+  echo "Имя ветки «${branch}» не соответствует формату <type>/<kebab-описание> (см. .claude/rules/git.md)." >&2
+  exit 1
+fi
