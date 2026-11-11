@@ -1,54 +1,39 @@
 # basis-2
 
-This template should help get you started developing with Vue 3 in Vite.
+Площадка для выполнения тестовых заданий.
 
-## Recommended IDE Setup
+## Стек
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+Vue 3 (Composition API, `<script setup>`), TypeScript в строгом режиме, VueUse, Vite, Vitest,
+ESLint + oxlint, Prettier.
 
-## Recommended Browser Setup
+## Требования
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+Node.js ≥ 24.12, npm.
 
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
+## Установка
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+## Команды
 
-```sh
-npm run dev
-```
+| Команда                | Что делает                           |
+| ---------------------- | ------------------------------------ |
+| `npm run dev`          | dev-сервер Vite                      |
+| `npm run build`        | проверка типов и production-сборка   |
+| `npm run preview`      | локальный просмотр production-сборки |
+| `npm run type-check`   | проверка типов (`vue-tsc`)           |
+| `npm run lint`         | oxlint + ESLint, только проверка     |
+| `npm run lint:fix`     | oxlint + ESLint с автоисправлением   |
+| `npm run format`       | форматирование Prettier              |
+| `npm run format:check` | проверка форматирования              |
+| `npm test`             | юнит-тесты однократно                |
+| `npm run test:unit`    | юнит-тесты в режиме наблюдения       |
 
-### Type-Check, Compile and Minify for Production
+## Git
 
-```sh
-npm run build
-```
-
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```
+Сообщения коммитов — [Conventional Commits](https://www.conventionalcommits.org/) на русском
+(`feat(cart): добавить счётчик количества`), ветки — `<type>/<kebab-описание>`.
+Соблюдение проверяют хуки husky (commitlint и имя ветки). Подробнее — [`.claude/rules/git.md`](.claude/rules/git.md).
