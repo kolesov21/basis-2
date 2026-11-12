@@ -10,6 +10,6 @@ fi
 
 pattern='^(feat|fix|refactor|perf|style|test|docs|build|ci|chore|revert)/[a-z0-9]+(-[a-z0-9]+)*$'
 if ! printf '%s' "$branch" | grep -Eq "$pattern"; then
-  echo "Имя ветки «${branch}» не соответствует формату <type>/<kebab-описание> (см. .claude/rules/git.md)." >&2
+  echo "Имя ветки «${branch}» не соответствует формату <type>/<kebab-описание> (см. .agents/rules/git.md)." >&2
   exit 1
 fi
