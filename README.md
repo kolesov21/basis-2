@@ -4,7 +4,7 @@
 
 ## Стек
 
-Vue 3 (Composition API, `<script setup>`), TypeScript в строгом режиме, VueUse, Vite, Vitest,
+Vue 3 (Composition API, `<script setup>`), TypeScript в строгом режиме, VueUse, Tailwind CSS, Vite, Vitest,
 ESLint + oxlint, Prettier.
 
 ## Требования
@@ -32,6 +32,18 @@ npm install
 | `npm test`             | юнит-тесты однократно                |
 | `npm run test:unit`    | юнит-тесты в режиме наблюдения       |
 
+## Стили
+
+Tailwind CSS 4 подключён через `@tailwindcss/vite`. Единая точка входа стилей —
+`src/styles/main.css`, импортируемая в `src/main.ts`.
+
+Основной способ стилизации — utility-классы в шаблонах Vue. Общие токены задаются через
+`@theme`, локальный CSS для исключений — через `<style scoped>`.
+Prettier сортирует классы с помощью `prettier-plugin-tailwindcss`: `npm run format`
+исправляет порядок, `npm run format:check` проверяет его.
+
+Подробные соглашения — [`.agents/rules/styles.md`](.agents/rules/styles.md).
+
 ## Git
 
 Сообщения коммитов — [Conventional Commits](https://www.conventionalcommits.org/) на русском
@@ -41,7 +53,7 @@ npm install
 ## Работа с Codex
 
 Открой корень проекта в Codex. Инструкции проекта находятся в [AGENTS.md](AGENTS.md):
-порядок работы, проверки и ссылки на правила стека и Git.
+порядок работы, проверки и ссылки на правила стека, стилей и Git.
 
 Локальные навыки находятся в `.agents/skills/`:
 
