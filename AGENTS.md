@@ -1,14 +1,15 @@
 # basis-2 — площадка для тестовых заданий
 
 Проект для выполнения тестовых заданий на собеседованиях.
-Стек: **Vue 3** + **TypeScript strict** + **VueUse**, сборка Vite, тесты Vitest.
+Стек: **Vue 3** + **TypeScript strict** + **VueUse** + **Tailwind CSS**, сборка Vite, тесты Vitest.
 
 Правила:
 
 - стек — [`.agents/rules/vue-stack.md`](.agents/rules/vue-stack.md)
+- стили — [`.agents/rules/styles.md`](.agents/rules/styles.md)
 - git — [`.agents/rules/git.md`](.agents/rules/git.md)
 
-Перед началом работы прочитай оба файла правил. `.agents/rules/` — обычные Markdown-файлы,
+Перед началом работы прочитай все три файла правил. `.agents/rules/` — обычные Markdown-файлы,
 которые нужно читать явно; они не подключаются автоматически.
 
 Все скилы проекта лежат локально в `.agents/skills/`, правила — в `.agents/rules/`.
@@ -18,6 +19,7 @@
 ## Структура проекта
 
 - `src/main.ts` — точка входа Vue, `src/App.vue` — корневой компонент.
+- `src/styles/main.css` — подключение Tailwind CSS, общие токены и глобальные стили.
 - `src/__tests__/App.spec.ts` — тест корневого компонента; окружение тестов — jsdom.
 - `vite.config.ts` — сборка и алиас `@` → `src/`, `vitest.config.ts` — настройки тестов.
 - `eslint.config.ts`, `.oxlintrc.json`, `.prettierrc.json` — правила качества кода.
